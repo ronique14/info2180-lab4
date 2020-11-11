@@ -9,13 +9,18 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <h1>Avengers Character Search</h1>
+    <div id="header">
+        <h1>Avengers Character Search</h1>
+    </div> <br>
     <div class="container">
         <div id="searchArea">
+            <p>Search by Full Name or Alias</p>
             <form action="superheroes.php">
+                <input type="text"  name="searchHero"  id="queryBox" placeholder="e.g Captain America or Steve Rogers" >
                 <button type="button" id="btn">Search</button>
-            </form>
+            </form> <br>
         </div>
+        <div id="result"></div>
     </div>
 </body>
 </html>

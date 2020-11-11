@@ -70,3 +70,28 @@ $superheroes = [
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
+
+
+<?php echo $_GET ['query'];?>
+
+$query = filter_input(INPUT_GET,"query",FILTER_SANITIZE_STRING);
+
+<?if ($query ==null){?>
+   <ul>
+<?php foreach ($superheroes as $superhero): ?>
+  <li><?= $superhero['alias']; ?></li>
+<?php endforeach; ?>
+</ul>
+<?}else{ ?>
+  <?php foreach ($superheroes as $superhero){?>
+   <?if ($query == $superhero['alias'] || $query == $superheroes ['name']){?>
+        <h3><?php echo $superheroes ['alias']; ?></h3>
+        <h4><?php echo $superheroes ['name']; ?></h4>
+        <p><?php echo $superheroes ['biography']; ?></p>
+    <?}?>
+  <?}?>
+<?}?>
+
+
+
+
